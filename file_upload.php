@@ -21,7 +21,8 @@
         mkdir($base_path,0777,true);  
     } 
 
-    $newfilename = date('Ymdhis').'.mp4';
+    $strArray = explode(".", $_FILES ['attach'] ['name']);
+    $newfilename = $strArray[0].'-'.date('Ymdhis').'.'.$strArray[1];
 
     // $target_path = $base_path . basename ($_FILES ['attach'] ['name']); 
     $target_path = $base_path . $newfilename; 
